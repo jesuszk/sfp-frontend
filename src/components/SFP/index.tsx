@@ -9,7 +9,7 @@ import gbmx from '../../assets/gbmx.png';
 
 import styles from './styles.module.scss';
 import 'react-toastify/dist/ReactToastify.css';
-import { request } from 'http';
+// import { request } from 'http';
 
 const override = css`
   margin: 8px auto;
@@ -495,7 +495,7 @@ export function SFP({ closeSFP, index }: Props) {
   function openCurrency(event: any) {
     const value = event.target.innerText;
     if (value !== '1,00') {
-      window.open('http://172.30.0.94/amsted/handleCurrency', '_blank', "toolbar,scrollbars,resizable,top=500,left=500,width=600,height=400");
+      window.open('http://172.30.0.94/greenbrier/handleCurrency', '_blank', "toolbar,scrollbars,resizable,top=500,left=500,width=600,height=400");
       toast.info('Necessário recarregar a página', {
         position: "top-right",
         autoClose: 2500,
@@ -504,7 +504,7 @@ export function SFP({ closeSFP, index }: Props) {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        onClose: () => window.location.href = `http://172.30.0.94/amsted/sfp-price-quotation/?code=${params.get('code')}&user=&name=`,
+        onClose: () => window.location.href = `http://172.30.0.94/greenbrier/sfp-price-quotation/?code=${params.get('code')}&user=&name=`,
       });
     }
   }
@@ -513,7 +513,7 @@ export function SFP({ closeSFP, index }: Props) {
   function openScrap(event: any) {
     const value = event.target.innerText;
     if (value !== '1,00') {
-      window.open(`http://172.30.0.94/amsted/controle_sucata_sfp/?sfp=${params.get('code')}`, '_blank');
+      window.open(`http://172.30.0.94/greenbrier/controle_sucata_sfp/?sfp=${params.get('code')}`, '_blank');
       toast.info('Necessário recarregar a página', {
         position: "top-right",
         autoClose: 2500,
@@ -522,7 +522,7 @@ export function SFP({ closeSFP, index }: Props) {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        onClose: () => window.location.href = `http://172.30.0.94/amsted/sfp-price-quotation/?code=${params.get('code')}&user=&name=`,
+        onClose: () => window.location.href = `http://172.30.0.94/greenbrier/sfp-price-quotation/?code=${params.get('code')}&user=&name=`,
       });
     }
   }
@@ -530,11 +530,11 @@ export function SFP({ closeSFP, index }: Props) {
 
   function openObservations(event: any) {
     const value = event.target.innerText;
-    window.open(`http://172.30.0.2/amsted/sfp_novo/form_obs.php?etapa=CONTROL&sfp=${params.get('code')}&minificado=yes`, '_blank');
+    window.open(`http://172.30.0.94/greenbrier/sfp_gbmx/form_obs.php?etapa=CONTROL&sfp=${params.get('code')}&minificado=yes`, '_blank');
   }
 
   async function findCurrency(selectedCurrency: string) {
-    const response = await api.get<ResponseCurrency>(`http://172.30.0.94/amsted/sfp-price-quotation-webservice/?lib=currency&currency=${selectedCurrency}`);
+    const response = await api.get<ResponseCurrency>(`http://172.30.0.94/greenbrier/sfp-price-quotation-webservice/?lib=currency&currency=${selectedCurrency}`);
 
     return response.data.value;
   }
@@ -658,7 +658,7 @@ export function SFP({ closeSFP, index }: Props) {
     let paramCostTotal = parseFloat(priceQuotation.industrialCosts.totals.total.replaceAll('.', '').replaceAll(',', '.')) + parseFloat(priceQuotation.administrativeExpenses.totals.total.replaceAll('.', '').replaceAll(',', '.')) + parseFloat(priceQuotation.additionalExpenses.warranty.total.replaceAll('.', '').replaceAll(',', '.')) + parseFloat(priceQuotation.additionalExpenses.total.replaceAll('.', '').replaceAll(',', '.'));
     let v_total = priceQuotation.primaryInfo.netPrice;
 
-    window.open(`http://172.30.0.2/amsted/sfp_novo/export_sfp.php?id=${priceQuotationCode}&material=${materialTotal}&gMargin=${paramGrossMargin}&profi=${paramProfitabilityValue}&paramRate=${paramRate}&paramCost=${paramCost}&paramEngIndustrial=${paramEngIndustrial}&paramEngIndustrialUnit=${paramEngIndustrialUnit}&paramCostTotal=${paramCostTotal}&v_total=${v_total}`, 'sharer', 'toolbar=0,status=0,width=548,height=325');
+    window.open(`http://172.30.0.94/greenbrier/sfp_gbmx/export_sfp.php?id=${priceQuotationCode}&material=${materialTotal}&gMargin=${paramGrossMargin}&profi=${paramProfitabilityValue}&paramRate=${paramRate}&paramCost=${paramCost}&paramEngIndustrial=${paramEngIndustrial}&paramEngIndustrialUnit=${paramEngIndustrialUnit}&paramCostTotal=${paramCostTotal}&v_total=${v_total}`, 'sharer', 'toolbar=0,status=0,width=548,height=325');
   }
 
   function changeNetPrice(event: React.ChangeEvent<HTMLInputElement>) {
@@ -681,14 +681,14 @@ export function SFP({ closeSFP, index }: Props) {
   async function redirectStage(stage: string) {
     await saveData();
     let redirect = '';
-    if (stage === 'vendas') redirect = `http://172.30.0.2/amsted/sfp_novo/formulario4.php?sfpCode=${priceQuotationCode}&editing_by_control=yes`;
-    else if (stage === 'eng-prod') redirect = `http://172.30.0.2/amsted/sfp_novo/lista_truque2.php?id=${priceQuotationCode}&editing_by_control=yes`;
-    else if (stage === 'eng-proc') redirect = `http://172.30.0.2/amsted/sfp_novo/lista_processo3.php?id=${priceQuotationCode}&primeiroAcesso=sim&editing_by_control=yes`;
-    else if (stage === 'cruzeiro') redirect = `http://172.30.0.2/amsted/sfp_novo/lista_crz.php?id=${priceQuotationCode}&editing_by_control=yes`;
-    else if (stage === 'logistica') redirect = `http://172.30.0.2/amsted/sfp_novo/lista_logist.php?id=${priceQuotationCode}&editing_by_control=yes`;
-    else if (stage === 'pcp') redirect = `http://172.30.0.2/amsted/sfp_novo/lista_vendas.php?id=${priceQuotationCode}&editing_by_control=yes`;
-    else if (stage === 'qualidade') redirect = `http://172.30.0.2/amsted/sfp_novo/lista_processo2.php?teste1=QUALIDADE&id=${priceQuotationCode}&editing_by_control=yes`;
-    else if (stage === 'compras') redirect = `http://172.30.0.2/amsted/sfp_novo/lista_compras2.php?id=${priceQuotationCode}&editing_by_control=yes`;
+    if (stage === 'vendas') redirect = `http://172.30.0.94/greenbrier/sfp_gbmx/formulario4.php?sfpCode=${priceQuotationCode}&editing_by_control=yes`;
+    else if (stage === 'eng-prod') redirect = `http://172.30.0.94/greenbrier/sfp_gbmx/lista_truque2.php?id=${priceQuotationCode}&editing_by_control=yes`;
+    else if (stage === 'eng-proc') redirect = `http://172.30.0.94/greenbrier/sfp_gbmx/lista_processo3.php?id=${priceQuotationCode}&primeiroAcesso=sim&editing_by_control=yes`;
+    else if (stage === 'cruzeiro') redirect = `http://172.30.0.94/greenbrier/sfp_gbmx/lista_crz.php?id=${priceQuotationCode}&editing_by_control=yes`;
+    else if (stage === 'logistica') redirect = `http://172.30.0.94/greenbrier/sfp_gbmx/lista_logist.php?id=${priceQuotationCode}&editing_by_control=yes`;
+    else if (stage === 'pcp') redirect = `http://172.30.0.94/greenbrier/sfp_gbmx/lista_vendas.php?id=${priceQuotationCode}&editing_by_control=yes`;
+    else if (stage === 'qualidade') redirect = `http://172.30.0.94/greenbrier/sfp_gbmx/lista_processo2.php?teste1=QUALIDADE&id=${priceQuotationCode}&editing_by_control=yes`;
+    else if (stage === 'compras') redirect = `http://172.30.0.94/greenbrier/sfp_gbmx/lista_compras2.php?id=${priceQuotationCode}&editing_by_control=yes`;
 
     if (redirect !== '') {
       window.location.replace(redirect);

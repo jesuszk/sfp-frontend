@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/amsted/sfp-price-quotation/static/css/main.7ca3999a.css",
-    "main.js": "/amsted/sfp-price-quotation/static/js/main.743efc4b.js",
+    "main.css": "/amsted/sfp-price-quotation/static/css/main.b3d0c118.css",
+    "main.js": "/amsted/sfp-price-quotation/static/js/main.34624466.js",
     "static/media/gbmx.png": "/amsted/sfp-price-quotation/static/media/gbmx.e7ce82282134c0f7afa2.png",
     "index.html": "/amsted/sfp-price-quotation/index.html",
     "static/media/chevron-down.svg": "/amsted/sfp-price-quotation/static/media/chevron-down.c3e123cf78bc368a192f.svg",
-    "main.7ca3999a.css.map": "/amsted/sfp-price-quotation/static/css/main.7ca3999a.css.map",
-    "main.743efc4b.js.map": "/amsted/sfp-price-quotation/static/js/main.743efc4b.js.map"
+    "main.b3d0c118.css.map": "/amsted/sfp-price-quotation/static/css/main.b3d0c118.css.map",
+    "main.34624466.js.map": "/amsted/sfp-price-quotation/static/js/main.34624466.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ca3999a.css",
-    "static/js/main.743efc4b.js"
+    "static/css/main.b3d0c118.css",
+    "static/js/main.34624466.js"
   ]
 }
