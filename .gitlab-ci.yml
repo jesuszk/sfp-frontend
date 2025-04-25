@@ -1,0 +1,56 @@
+stages:
+  - build-homolog
+  - deploy-homolog
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+    - dist/
+
+build-homolog:
+  stage: build
+  environment: Homolog
+  tags:
+    - homolog
+  only:
+    - homolog
+  script:
+    - unset CI
+    - npm install
+    - npm run-script build
+
+deploy-homolog:
+  stage: deploy
+  environment: Homolog
+  tags:
+    - homolog
+  only:
+    - homolog
+  script:
+    - mkdir -p /var/www/htdocs/amsted/sfp-price-quotation/
+    - cp -r ./dist/* /var/www/htdocs/amsted/sfp-price-quotation/
+
+build:
+  stage: build
+  environment: Production
+  tags:
+    - prod
+  only:
+    - master
+  script:
+    - unset CI
+    - npm install
+    - npm run-script build
+
+deploy:
+  stage: deploy
+  environment: Production
+  tags:
+    - prod
+  only:
+    - master
+  script:
+    - mkdir -p /var/www/htdocs/amsted/sfp-price-quotation/
+    - cp -r ./dist/* /var/www/htdocs/amsted/sfp-price-quotation/

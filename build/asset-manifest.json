@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/amsted/sfp-price-quotation/static/css/main.7ca3999a.css",
+    "main.js": "/amsted/sfp-price-quotation/static/js/main.743efc4b.js",
+    "static/media/gbmx.png": "/amsted/sfp-price-quotation/static/media/gbmx.e7ce82282134c0f7afa2.png",
+    "index.html": "/amsted/sfp-price-quotation/index.html",
+    "static/media/chevron-down.svg": "/amsted/sfp-price-quotation/static/media/chevron-down.c3e123cf78bc368a192f.svg",
+    "main.7ca3999a.css.map": "/amsted/sfp-price-quotation/static/css/main.7ca3999a.css.map",
+    "main.743efc4b.js.map": "/amsted/sfp-price-quotation/static/js/main.743efc4b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ca3999a.css",
+    "static/js/main.743efc4b.js"
+  ]
+}
