@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/amsted/sfp-price-quotation/static/css/main.b3d0c118.css",
-    "main.js": "/amsted/sfp-price-quotation/static/js/main.34624466.js",
-    "static/media/gbmx.png": "/amsted/sfp-price-quotation/static/media/gbmx.e7ce82282134c0f7afa2.png",
-    "index.html": "/amsted/sfp-price-quotation/index.html",
-    "static/media/chevron-down.svg": "/amsted/sfp-price-quotation/static/media/chevron-down.c3e123cf78bc368a192f.svg",
-    "main.b3d0c118.css.map": "/amsted/sfp-price-quotation/static/css/main.b3d0c118.css.map",
-    "main.34624466.js.map": "/amsted/sfp-price-quotation/static/js/main.34624466.js.map"
+    "main.css": "/greenbrier/sfp-price-quotation/static/css/main.1cdfbdd6.css",
+    "main.js": "/greenbrier/sfp-price-quotation/static/js/main.5fc64e65.js",
+    "static/media/gbmx.png": "/greenbrier/sfp-price-quotation/static/media/gbmx.e7ce82282134c0f7afa2.png",
+    "index.html": "/greenbrier/sfp-price-quotation/index.html",
+    "static/media/chevron-down.svg": "/greenbrier/sfp-price-quotation/static/media/chevron-down.c3e123cf78bc368a192f.svg",
+    "main.1cdfbdd6.css.map": "/greenbrier/sfp-price-quotation/static/css/main.1cdfbdd6.css.map",
+    "main.5fc64e65.js.map": "/greenbrier/sfp-price-quotation/static/js/main.5fc64e65.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3d0c118.css",
-    "static/js/main.34624466.js"
+    "static/css/main.1cdfbdd6.css",
+    "static/js/main.5fc64e65.js"
   ]
 }

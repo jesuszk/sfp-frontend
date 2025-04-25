@@ -629,7 +629,7 @@ export function SFP({ closeSFP, index }: Props) {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        onClose: () => window.location.href = `https://intranet.amstedmaxion.com.br/sfp_novo/lista_geral.php?etapa=CONTROL`,
+        onClose: () => window.location.href = `http://172.30.0.94/greenbrier/sfp_gbmx/lista_geral.php?etapa=CONTROL`,
       });
     }).catch((error) => {
       toast.error(error, {

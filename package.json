@@ -2,7 +2,7 @@
     "name": "sfp-price-quotation",
     "version": "0.1.0",
     "private": true,
-    "homepage": "http://localhost/amsted/sfp-price-quotation/",
+    "homepage": "http://localhost/greenbrier/sfp-price-quotation/",
     "dependencies": {
         "@emotion/react": "^11.5.0",
         "@testing-library/jest-dom": "^5.11.4",
