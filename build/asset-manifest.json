@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/greenbrier/sfp-price-quotation/static/css/main.1cdfbdd6.css",
-    "main.js": "/greenbrier/sfp-price-quotation/static/js/main.5fc64e65.js",
+    "main.js": "/greenbrier/sfp-price-quotation/static/js/main.afa793fd.js",
     "static/media/gbmx.png": "/greenbrier/sfp-price-quotation/static/media/gbmx.e7ce82282134c0f7afa2.png",
     "index.html": "/greenbrier/sfp-price-quotation/index.html",
     "static/media/chevron-down.svg": "/greenbrier/sfp-price-quotation/static/media/chevron-down.c3e123cf78bc368a192f.svg",
     "main.1cdfbdd6.css.map": "/greenbrier/sfp-price-quotation/static/css/main.1cdfbdd6.css.map",
-    "main.5fc64e65.js.map": "/greenbrier/sfp-price-quotation/static/js/main.5fc64e65.js.map"
+    "main.afa793fd.js.map": "/greenbrier/sfp-price-quotation/static/js/main.afa793fd.js.map"
   },
   "entrypoints": [
     "static/css/main.1cdfbdd6.css",
-    "static/js/main.5fc64e65.js"
+    "static/js/main.afa793fd.js"
   ]
 }

@@ -458,7 +458,8 @@ export function SFP({ closeSFP, index }: Props) {
   async function handleGetRateList() {
     await api.get<RateResponse>('/', {
       params: {
-        lib: 'rates'
+        lib: 'rates',
+        sfp: params.get('code')
       }
     }).then((response) => {
       const { data } = response;
